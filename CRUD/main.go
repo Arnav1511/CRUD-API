@@ -1,6 +1,10 @@
 package main
 
-import "net/http"
+import (
+	"fmt"
+	"log"
+	"net/http"
+)
 
 type movie struct {
 	ID       string    `json:"id"`
@@ -25,5 +29,6 @@ func main() {
 	r.HandleFunc("/movies/{id}", updateMovie).Methods("PUT")
 	r.HandleFunc("/movies/{id}", deleteMovie).Methods("DELETE")
 
-	http.ListenAndServe(":8000", r)
+	fmt.Println("Starting server at port 8000")
+	log.Fatal(http.ListenAndServe(":8000", r))
 }
