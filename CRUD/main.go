@@ -66,3 +66,11 @@ func getMovie(w http.ResponseWriter, r *http.Request) {
 	}
 	json.NewEncoder(w).Encode(&movie{})
 }
+
+func createMovie(w http.ResponseWriter, r *http.Request) {
+	var newMovie movie
+	json.NewDecoder(r.Body).Decode(&newMovie)
+	movies = append(movies, newMovie)
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(movies)
+}
