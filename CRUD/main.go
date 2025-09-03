@@ -24,7 +24,7 @@ type Director struct {
 }
 
 var movies []movie
-
+// write the other function above the main function that way its easier to track the main function and if there are any errors inside it. 
 func main() {
 	r := mux.NewRouter()
 
