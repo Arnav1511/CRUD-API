@@ -95,3 +95,6 @@ func updateMovie(w http.ResponseWriter, r *http.Request) {
 	}
 	json.NewEncoder(w).Encode(&movie{})
 }
+
+///for all of this what I did later is tested out using postman to see how its working and its working perfectly
+// I will attach some screenshots of the postman requests and responses for reference.
